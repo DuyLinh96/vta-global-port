@@ -21,19 +21,15 @@ export interface ServiceItem {
 
 export interface FleetGroup {
   title: string;
-  description: string;
 }
 
 export interface NewsItem {
-  category: string;
   title: string;
-  description: string;
   status: string;
 }
 
 export interface SmartTool {
   title: string;
-  description: string;
 }
 
 export interface InterestOption {
@@ -59,13 +55,8 @@ export interface SiteContent {
   hero: {
     eyebrow: string;
     headline: string;
-    body: string;
     cta: string;
     imageAlt: string;
-    routeLabel: string;
-    routeValue: string;
-    operatingLabel: string;
-    operatingValue: string;
   };
   tracking: {
     eyebrow: string;
@@ -82,8 +73,9 @@ export interface SiteContent {
   company: {
     eyebrow: string;
     title: string;
+    subtitle: string;
     body: string;
-    values: string[];
+    values: [string, string, string, string, string];
     imageAlt: string;
     visualLabel: string;
   };
@@ -92,7 +84,7 @@ export interface SiteContent {
     title: string;
     description: string;
     imageAlt: string;
-    items: ServiceItem[];
+    items: [ServiceItem, ServiceItem, ServiceItem];
   };
   fleet: {
     eyebrow: string;
@@ -103,13 +95,13 @@ export interface SiteContent {
     vesselCount: string;
     vesselCountLabel: string;
     watermark: string;
-    groups: FleetGroup[];
+    groups: [FleetGroup, FleetGroup];
   };
   news: {
     eyebrow: string;
     title: string;
     description: string;
-    items: NewsItem[];
+    items: [NewsItem, NewsItem, NewsItem, NewsItem];
   };
   smart: {
     eyebrow: string;
@@ -117,7 +109,7 @@ export interface SiteContent {
     description: string;
     interfaceLabel: string;
     systemOnline: string;
-    tools: SmartTool[];
+    tools: [SmartTool, SmartTool, SmartTool, SmartTool];
   };
   contact: {
     eyebrow: string;
@@ -132,7 +124,6 @@ export interface SiteContent {
     fax: string;
     emailLabel: string;
     email: string;
-    confirmationNote: string;
     formTitle: string;
     fullName: string;
     companyName: string;

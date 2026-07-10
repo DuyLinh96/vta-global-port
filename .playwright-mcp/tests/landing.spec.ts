@@ -48,7 +48,7 @@ test("renders the complete landing page without broken images or overflow", asyn
   }
 
   const headings = [
-    "Một đầu mối. Một dòng vận hành xuyên suốt.",
+    "Nền tảng tạo nên VTA Global Port",
     "Dịch vụ của chúng tôi",
     "Đội tàu của chúng tôi",
     "Tin tức về chúng tôi",
@@ -62,12 +62,17 @@ test("renders the complete landing page without broken images or overflow", asyn
   const images = page.getByRole("img");
   await expect(images).toHaveCount(5);
   for (const image of await images.all()) {
+    const imageName = await image.getAttribute("alt");
     await image.evaluate((element) => element.scrollIntoView({ block: "center" }));
-    await expect.poll(() =>
-      image.evaluate(
+    await expect.poll(
+      () => image.evaluate(
         (element) =>
           element instanceof HTMLImageElement && element.complete && element.naturalWidth > 0,
       ),
+      {
+        message: `Image "${imageName}" should finish loading without being broken`,
+        timeout: 15_000,
+      },
     ).toBe(true);
   }
 
@@ -86,6 +91,179 @@ test("renders the complete landing page without broken images or overflow", asyn
   });
 });
 
+test("matches the approved Vietnamese PDF content in every landing section", async ({ page }) => {
+  await expect(page.getByRole("heading", { name: "Vững bước thành công", level: 1 })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Liên hệ với chúng tôi", exact: true })).toBeVisible();
+
+  const removedHeroCopy = [
+    "Kết nối cảng biển · Tối ưu chuỗi cung ứng",
+    "VTA Global Port mang đến giải pháp vận chuyển và khai thác hiệu quả, tối ưu dòng chảy hàng hóa từ cảng đến điểm giao nhận. Chúng tôi nâng cao năng lực vận hành, ứng dụng công nghệ, phát triển hạ tầng và trở thành đối tác tin cậy của khách hàng trong và ngoài nước.",
+    "Dòng chảy hàng hóa",
+    "Cảng → Điểm giao nhận",
+    "Vận hành đồng bộ",
+  ];
+  for (const copy of removedHeroCopy) {
+    await expect(page.getByText(copy, { exact: true })).toHaveCount(0);
+  }
+
+  const company = page.locator("#company");
+  await expect(company.getByRole("heading", {
+    name: "Nền tảng tạo nên VTA Global Port",
+    level: 2,
+  })).toBeVisible();
+  await expect(company.getByText(
+    "Được xây dựng từ tiêu chuẩn vận hành và đội ngũ giàu kinh nghiệm",
+    { exact: true },
+  )).toBeVisible();
+  await expect(company.getByText(
+    "Với hệ thống dịch vụ đồng bộ cùng đội ngũ chuyên nghiệp, VTA Global Port mang đến các giải pháp vận chuyển và khai thác hiệu quả, giúp tối ưu dòng chảy hàng hóa từ cảng đến điểm giao nhận. Chúng tôi không ngừng nâng cao năng lực vận hành, ứng dụng công nghệ và phát triển hạ tầng nhằm đáp ứng yêu cầu ngày càng cao của chuỗi cung ứng hiện đại, trở thành đối tác tin cậy của khách hàng trong và ngoài nước.",
+    { exact: true },
+  )).toBeVisible();
+  const companyValues = [
+    "Chính trực",
+    "An toàn",
+    "Hiệu quả vận hành",
+    "Đổi mới",
+    "Phát triển bền vững",
+  ];
+  await expect(company.getByRole("listitem")).toHaveCount(companyValues.length);
+  for (const value of companyValues) {
+    await expect(company.getByRole("listitem").getByText(value, { exact: true })).toBeVisible();
+  }
+
+  const services = page.locator("#services");
+  const serviceCards = services.getByRole("listitem");
+  const expectedServices = [
+    {
+      title: "Vận tải đường biển",
+      description:
+        "VTA Global Port cung cấp dịch vụ vận tải đường biển với giải pháp linh hoạt, an toàn và hiệu quả, đáp ứng nhu cầu vận chuyển hàng hóa trong nước và quốc tế.",
+    },
+    {
+      title: "Khai thác cảng",
+      description:
+        "VTA Global Port cung cấp dịch vụ khai thác cảng với quy trình vận hành chuyên nghiệp, đáp ứng nhu cầu tiếp nhận tàu, xếp dỡ hàng hóa và điều phối hoạt động cảng một cách an toàn, hiệu quả.",
+    },
+    {
+      title: "Khai thác kho bãi",
+      description:
+        "VTA Global Port cung cấp dịch vụ quản lý kho bãi với hệ thống lưu trữ được vận hành khoa học, an toàn và hiệu quả.",
+    },
+  ];
+  await expect(serviceCards).toHaveCount(expectedServices.length);
+  for (const [index, service] of expectedServices.entries()) {
+    await expect(serviceCards.nth(index).getByText(service.title, { exact: true })).toBeVisible();
+    await expect(serviceCards.nth(index).getByText(service.description, { exact: true })).toBeVisible();
+  }
+  await expect(services.getByText("Dịch vụ logistics", { exact: true })).toHaveCount(0);
+
+  const fleet = page.locator("#fleet");
+  await expect(fleet.getByText(
+    "Sở hữu đội tàu biển và tàu sông được đầu tư đồng bộ, VTA Global Port cung cấp năng lực vận tải linh hoạt, đáp ứng đa dạng nhu cầu vận chuyển hàng hóa. Hệ thống gồm 4 tàu biển trọng tải lớn cùng nhiều phương tiện vận tải đường thủy nội địa, giúp kết nối hiệu quả giữa cảng biển, cảng sông và các khu vực sản xuất, góp phần tối ưu chuỗi cung ứng và nâng cao hiệu quả logistics.",
+    { exact: true },
+  )).toBeVisible();
+  await expect(fleet.getByRole("link", { name: "Liên hệ", exact: true })).toBeVisible();
+  await expect(fleet.getByText("04", { exact: true })).toBeVisible();
+  await expect(fleet.getByText("tàu biển trọng tải lớn", { exact: true })).toBeVisible();
+  await expect(fleet.getByRole("heading", { name: "Tàu biển", level: 3 })).toBeVisible();
+  await expect(fleet.getByRole("heading", { name: "Tàu sông", level: 3 })).toBeVisible();
+  const removedFleetDescriptions = [
+    "Năng lực vận chuyển tải trọng lớn, phục vụ luồng hàng trong nước và kết nối quốc tế.",
+    "Phương tiện đường thủy nội địa linh hoạt, kết nối cảng biển với cảng sông và khu sản xuất.",
+  ];
+  for (const description of removedFleetDescriptions) {
+    await expect(fleet.getByText(description, { exact: true })).toHaveCount(0);
+  }
+
+  const news = page.locator("#news");
+  const newsArticles = news.getByRole("article");
+  const newsGroups = ["Hoạt động", "Sự kiện", "Truyền thông", "Tuyển dụng"];
+  await expect(newsArticles).toHaveCount(newsGroups.length);
+  for (const [index, group] of newsGroups.entries()) {
+    await expect(newsArticles.nth(index).getByRole("heading", { name: group, level: 3 })).toBeVisible();
+    await expect(newsArticles.nth(index).getByText(
+      "Nội dung đang được cập nhật",
+      { exact: true },
+    )).toBeVisible();
+  }
+  const removedNewsTitles = [
+    "Góc nhìn từ hoạt động khai thác cảng và logistics",
+    "Kết nối chuyên môn trong chuỗi cung ứng",
+    "Tài liệu và câu chuyện về vận tải hiện đại",
+  ];
+  for (const title of removedNewsTitles) {
+    await expect(news.getByText(title, { exact: true })).toHaveCount(0);
+  }
+
+  const smart = page.locator("#smart");
+  await expect(smart.getByText(
+    "Ứng dụng công nghệ và quy trình quản lý hiện đại để tối ưu hoạt động khai thác cảng, điều phối phương tiện và quản lý hàng hóa, giúp nâng cao hiệu quả vận hành và hỗ trợ khách hàng trong suốt quá trình logistics.",
+    { exact: true },
+  )).toBeVisible();
+  const smartTools = ["My VTA Port", "Tra cứu lịch tàu", "Theo dõi hàng hóa", "Biểu cước vận tải"];
+  await expect(smart.getByRole("button")).toHaveCount(smartTools.length);
+  for (const tool of smartTools) {
+    await expect(smart.getByRole("button", { name: tool, exact: true })).toBeVisible();
+  }
+  const removedSmartDescriptions = [
+    "Không gian quản lý tập trung cho khách hàng và đối tác.",
+    "Tiếp cận lịch trình dự kiến trong một luồng tra cứu rõ ràng.",
+    "Theo dõi tiến trình lô hàng khi hệ thống dữ liệu được kết nối.",
+    "Tham khảo biểu cước theo nhu cầu và tuyến vận chuyển.",
+  ];
+  for (const description of removedSmartDescriptions) {
+    await expect(smart.getByText(description, { exact: true })).toHaveCount(0);
+  }
+
+  const contact = page.locator("#contact");
+  await expect(contact.getByText(
+    "Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ mọi yêu cầu về dịch vụ cảng, vận tải và logistics. Gửi thông tin của Quý khách ngay hôm nay để nhận tư vấn, báo giá hoặc giải pháp phù hợp cho hoạt động kinh doanh.",
+    { exact: true },
+  )).toBeVisible();
+  await expect(contact.getByRole("heading", { name: "Thông tin liên hệ", level: 3 })).toBeVisible();
+  const contactDetails = [
+    "Tỉnh Hải Dương, Việt Nam",
+    "+84 123 456 789",
+    "Fax: +84 123 456 780",
+    "info@vtagroup.vn",
+  ];
+  for (const detail of contactDetails) {
+    await expect(contact.getByText(detail, { exact: true })).toBeVisible();
+  }
+  const contactFields = [
+    { role: "textbox" as const, name: "Họ và tên" },
+    { role: "textbox" as const, name: "Tên doanh nghiệp" },
+    { role: "textbox" as const, name: "Chức vụ" },
+    { role: "textbox" as const, name: "Email" },
+    { role: "textbox" as const, name: "Số điện thoại" },
+    { role: "textbox" as const, name: "Nội dung yêu cầu" },
+    { role: "combobox" as const, name: "Lĩnh vực quan tâm" },
+  ];
+  for (const field of contactFields) {
+    await expect(contact.getByRole(field.role, { name: field.name, exact: true })).toBeVisible();
+  }
+  const interestOptions = [
+    "Chọn lĩnh vực",
+    "Khai thác cảng",
+    "Vận tải đường thủy",
+    "Logistics",
+    "Kho bãi",
+    "Xếp dỡ hàng hóa",
+    "Hợp tác kinh doanh",
+    "Khác",
+  ];
+  await expect(contact.getByRole("option")).toHaveCount(interestOptions.length);
+  for (const option of interestOptions) {
+    await expect(contact.getByRole("option", { name: option, exact: true })).toHaveCount(1);
+  }
+  await expect(contact.getByText("Thông tin đang được xác nhận", { exact: true })).toHaveCount(0);
+
+  await expect(page.getByRole("contentinfo").getByText(
+    "Vững bước thành công",
+    { exact: true },
+  )).toBeVisible();
+});
+
 test("switches all primary content from Vietnamese to English and back", async ({ page }, testInfo) => {
   await page.getByRole("button", { name: "English", exact: true }).click();
 
@@ -95,6 +273,67 @@ test("switches all primary content from Vietnamese to English and back", async (
   await expect(page.getByRole("heading", { name: "Track a shipment" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Send an enquiry" })).toBeVisible();
   await expect(page.getByRole("textbox", { name: "Full name", exact: true })).toBeVisible();
+
+  const englishCompany = page.locator("#company");
+  await expect(englishCompany.getByRole("heading", {
+    name: "The foundation behind VTA Global Port",
+    level: 2,
+  })).toBeVisible();
+  await expect(englishCompany.getByText(
+    "Built on operational standards and an experienced team",
+    { exact: true },
+  )).toBeVisible();
+  await expect(englishCompany.getByText(
+    "With an integrated service system and a professional team, VTA Global Port provides efficient transport and operations solutions, helping optimise cargo flows from ports to delivery points. We continuously enhance our operational capacity, apply technology and develop infrastructure to meet the increasing demands of modern supply chains, becoming a trusted partner to customers in Vietnam and abroad.",
+    { exact: true },
+  )).toBeVisible();
+  await expect(englishCompany.getByRole("listitem")).toHaveCount(5);
+  await expect(englishCompany.getByText("Integrity", { exact: true })).toBeVisible();
+
+  const englishServices = page.locator("#services");
+  await expect(englishServices.getByRole("listitem")).toHaveCount(3);
+  await expect(englishServices.getByText(
+    "VTA Global Port provides sea freight services with flexible, safe and efficient solutions that meet domestic and international cargo transportation needs.",
+    { exact: true },
+  )).toBeVisible();
+  await expect(englishServices.getByText("Logistics services", { exact: true })).toHaveCount(0);
+
+  const englishFleet = page.locator("#fleet");
+  await expect(englishFleet.getByText(
+    "With a consistently invested fleet of sea-going and river vessels, VTA Global Port provides flexible transport capacity to meet diverse cargo transportation needs. The system includes four high-capacity sea-going vessels and numerous inland waterway craft, effectively connecting seaports, river ports and production areas, helping optimise supply chains and improve logistics efficiency.",
+    { exact: true },
+  )).toBeVisible();
+  await expect(englishFleet.getByRole("link", { name: "Contact", exact: true })).toBeVisible();
+
+  const englishNews = page.locator("#news");
+  await expect(englishNews.getByRole("article")).toHaveCount(4);
+  for (const group of ["Operations", "Events", "Media", "Careers"]) {
+    await expect(englishNews.getByRole("heading", { name: group, level: 3 })).toBeVisible();
+  }
+  await expect(englishNews.getByText("Content is being updated", { exact: true })).toHaveCount(4);
+
+  const englishSmart = page.locator("#smart");
+  await expect(englishSmart.getByText(
+    "We apply technology and modern management processes to optimise port operations, vehicle coordination and cargo management, improving operating efficiency and supporting customers throughout their logistics journey.",
+    { exact: true },
+  )).toBeVisible();
+  for (const tool of ["My VTA Port", "Vessel schedule", "Cargo tracking", "Freight tariffs"]) {
+    await expect(englishSmart.getByRole("button", { name: tool, exact: true })).toBeVisible();
+  }
+
+  const englishContact = page.locator("#contact");
+  await expect(englishContact.getByText(
+    "Our specialists are ready to support port, transport and logistics requirements. Send us your information today to request advice, a quotation or a solution tailored to your business operations.",
+    { exact: true },
+  )).toBeVisible();
+  await expect(englishContact.getByRole("textbox", {
+    name: "Business email",
+    exact: true,
+  })).toBeVisible();
+  await expect(page.getByRole("contentinfo").getByText(
+    "Steady steps to success",
+    { exact: true },
+  )).toBeVisible();
 
   const isMobile = testInfo.project.name === "mobile-390";
   if (isMobile) {

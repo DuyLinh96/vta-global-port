@@ -441,7 +441,7 @@ h2 {
   position: relative;
   z-index: 2;
   padding-top: clamp(100px, 14vh, 150px);
-  padding-bottom: 170px;
+  padding-bottom: 210px;
 }
 
 .hero-kicker {
@@ -452,7 +452,7 @@ h2 {
 
 .hero h1 {
   max-width: 920px;
-  margin-bottom: 30px;
+  margin-bottom: 46px;
   font-size: clamp(4.25rem, 8.8vw, 8.5rem);
   letter-spacing: -0.055em;
   line-height: 0.88;
@@ -460,53 +460,8 @@ h2 {
   animation: rise-in 760ms 170ms ease both;
 }
 
-.hero-copy {
-  max-width: 710px;
-  margin-bottom: 36px;
-  color: rgb(255 255 255 / 78%);
-  font-size: clamp(1rem, 1.45vw, 1.18rem);
-  line-height: 1.72;
-  animation: rise-in 760ms 240ms ease both;
-}
-
 .hero .button {
-  animation: rise-in 760ms 310ms ease both;
-}
-
-.hero-facts {
-  display: flex;
-  max-width: 710px;
-  gap: 0;
-  margin-top: 64px;
-  border-top: 1px solid rgb(255 255 255 / 24%);
-  animation: rise-in 760ms 380ms ease both;
-}
-
-.hero-facts > div {
-  display: grid;
-  min-width: 230px;
-  gap: 4px;
-  padding: 20px 40px 0 0;
-}
-
-.hero-facts > div + div {
-  padding-left: 40px;
-  border-left: 1px solid rgb(255 255 255 / 24%);
-}
-
-.hero-facts span {
-  color: var(--cyan-400);
-  font-family: var(--font-display);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.hero-facts strong {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 600;
+  animation: rise-in 760ms 240ms ease both;
 }
 
 /* Tracking hub */
@@ -709,6 +664,16 @@ h2 {
   line-height: 1.8;
 }
 
+.company-copy .company-subtitle {
+  max-width: 620px;
+  margin-bottom: 18px;
+  color: var(--navy-700);
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
 .value-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -858,6 +823,8 @@ h2 {
 }
 
 .service-list {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
   margin: 0;
   padding: 0;
   background: var(--white);
@@ -1072,10 +1039,10 @@ h2 {
 
 .fleet-groups article {
   display: grid;
-  min-height: 240px;
+  min-height: 150px;
   grid-template-columns: 50px 44px 1fr;
   gap: 12px 20px;
-  align-content: start;
+  align-content: center;
   padding: 40px 50px 36px 0;
 }
 
@@ -1101,14 +1068,6 @@ h2 {
   font-size: 1.85rem;
 }
 
-.fleet-groups p {
-  grid-column: 3;
-  max-width: 480px;
-  margin-bottom: 0;
-  color: rgb(255 255 255 / 58%);
-  font-size: 0.9rem;
-}
-
 /* News */
 .news-section {
   padding: 140px 0;
@@ -1121,7 +1080,7 @@ h2 {
 
 .news-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 28px;
 }
 
@@ -1165,6 +1124,10 @@ h2 {
   background: #0b3b4c;
 }
 
+.news-art-4 {
+  background: #143a45;
+}
+
 .news-art > svg {
   position: relative;
   z-index: 2;
@@ -1186,31 +1149,15 @@ h2 {
 
 .news-copy {
   display: grid;
-  min-height: 315px;
+  min-height: 150px;
   align-content: start;
   padding: 28px 8px 20px;
-}
-
-.news-copy > p {
-  margin-bottom: 18px;
-  color: var(--navy-700);
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 .news-copy h3 {
   margin-bottom: 18px;
   font-size: clamp(1.55rem, 2.5vw, 2.2rem);
   line-height: 1.12;
-}
-
-.news-copy > span {
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.65;
 }
 
 .news-copy small {
@@ -1267,7 +1214,7 @@ h2 {
 .smart-tool-list button {
   display: grid;
   width: 100%;
-  min-height: 86px;
+  min-height: 72px;
   grid-template-columns: 42px 1fr 24px;
   align-items: center;
   gap: 14px;
@@ -1297,19 +1244,9 @@ h2 {
   width: 20px;
 }
 
-.smart-tool-list button > span:nth-child(2) {
-  display: grid;
-  gap: 3px;
-}
-
 .smart-tool-list strong {
   font-family: var(--font-display);
   font-size: 1rem;
-}
-
-.smart-tool-list small {
-  color: #516576;
-  font-size: 0.73rem;
 }
 
 .smart-feedback {
@@ -1539,13 +1476,6 @@ h2 {
 .contact-details strong {
   font-family: var(--font-display);
   font-size: 0.88rem;
-}
-
-.confirmation-note {
-  margin: 20px 0 0;
-  color: rgb(255 255 255 / 42%);
-  font-size: 0.72rem;
-  font-style: italic;
 }
 
 .contact-form {
@@ -1806,6 +1736,10 @@ h2 {
     grid-template-columns: minmax(300px, 0.55fr) minmax(520px, 1fr);
     gap: 50px;
   }
+
+  .news-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 940px) {
@@ -1814,7 +1748,7 @@ h2 {
   }
 
   .hero {
-    min-height: 820px;
+    min-height: 700px;
   }
 
   .hero-content {
@@ -1988,7 +1922,7 @@ h2 {
   }
 
   .hero {
-    min-height: 760px;
+    min-height: 640px;
   }
 
   .hero-image {
@@ -2010,30 +1944,6 @@ h2 {
     max-width: 420px;
     margin-bottom: 24px;
     font-size: clamp(3.8rem, 18vw, 5.5rem);
-  }
-
-  .hero-copy {
-    margin-bottom: 28px;
-    font-size: 0.94rem;
-    line-height: 1.65;
-  }
-
-  .hero-facts {
-    margin-top: 44px;
-  }
-
-  .hero-facts > div {
-    min-width: 0;
-    flex: 1;
-    padding-right: 18px;
-  }
-
-  .hero-facts > div + div {
-    padding-left: 18px;
-  }
-
-  .hero-facts strong {
-    font-size: 0.78rem;
   }
 
   .tracking-main {
@@ -2189,7 +2099,7 @@ h2 {
 
   .fleet-groups article,
   .fleet-groups article + article {
-    min-height: 210px;
+    min-height: 130px;
     padding: 34px 0;
     border-left: 0;
     border-bottom: 1px solid rgb(255 255 255 / 18%);

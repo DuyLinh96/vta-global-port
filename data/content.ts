@@ -54,16 +54,10 @@ export const content: Record<Language, SiteContent> = {
       { label: "Liên hệ", href: "#contact", children: [] },
     ],
     hero: {
-      eyebrow: "Kết nối cảng biển · Tối ưu chuỗi cung ứng",
+      eyebrow: "VTA Global Port",
       headline: "Vững bước thành công",
-      body:
-        "VTA Global Port mang đến giải pháp vận chuyển và khai thác hiệu quả, tối ưu dòng chảy hàng hóa từ cảng đến điểm giao nhận. Chúng tôi nâng cao năng lực vận hành, ứng dụng công nghệ, phát triển hạ tầng và trở thành đối tác tin cậy của khách hàng trong và ngoài nước.",
       cta: "Liên hệ với chúng tôi",
       imageAlt: "Tàu container đang được khai thác tại cảng biển",
-      routeLabel: "Dòng chảy hàng hóa",
-      routeValue: "Cảng → Điểm giao nhận",
-      operatingLabel: "Năng lực",
-      operatingValue: "Vận hành đồng bộ",
     },
     tracking: {
       eyebrow: "VTA Control Desk",
@@ -96,122 +90,93 @@ export const content: Record<Language, SiteContent> = {
     },
     company: {
       eyebrow: "VTA Global Port",
-      title: "Một đầu mối. Một dòng vận hành xuyên suốt.",
+      title: "Nền tảng tạo nên VTA Global Port",
+      subtitle: "Được xây dựng từ tiêu chuẩn vận hành và đội ngũ giàu kinh nghiệm",
       body:
-        "Với hệ thống dịch vụ đồng bộ cùng đội ngũ chuyên nghiệp, chúng tôi kết nối vận tải, khai thác cảng và logistics để hàng hóa được lưu chuyển an toàn, hiệu quả và đúng tiến độ.",
-      values: ["An toàn", "Hiệu quả vận hành", "Đổi mới", "Phát triển bền vững"],
+        "Với hệ thống dịch vụ đồng bộ cùng đội ngũ chuyên nghiệp, VTA Global Port mang đến các giải pháp vận chuyển và khai thác hiệu quả, giúp tối ưu dòng chảy hàng hóa từ cảng đến điểm giao nhận. Chúng tôi không ngừng nâng cao năng lực vận hành, ứng dụng công nghệ và phát triển hạ tầng nhằm đáp ứng yêu cầu ngày càng cao của chuỗi cung ứng hiện đại, trở thành đối tác tin cậy của khách hàng trong và ngoài nước.",
+      values: ["Chính trực", "An toàn", "Hiệu quả vận hành", "Đổi mới", "Phát triển bền vững"],
       imageAlt: "Mạng lưới phương tiện vận tải nhìn từ trên cao",
-      visualLabel: "VTA / Logistics tích hợp",
+      visualLabel: "VTA Global Port",
     },
     services: {
-      eyebrow: "Năng lực tích hợp",
+      eyebrow: "Dịch vụ",
       title: "Dịch vụ của chúng tôi",
       description:
-        "Với hệ thống dịch vụ đồng bộ cùng đội ngũ chuyên nghiệp, VTA Global Port mang đến các giải pháp vận chuyển và khai thác hiệu quả, giúp tối ưu dòng chảy hàng hóa từ cảng đến điểm giao nhận. Chúng tôi không ngừng nâng cao năng lực vận hành, ứng dụng công nghệ và phát triển hạ tầng để đáp ứng chuỗi cung ứng hiện đại.",
+        "Với hệ thống dịch vụ đồng bộ cùng đội ngũ chuyên nghiệp, VTA Global Port mang đến các giải pháp vận chuyển và khai thác hiệu quả, giúp tối ưu dòng chảy hàng hóa từ cảng đến điểm giao nhận. Chúng tôi không ngừng nâng cao năng lực vận hành, ứng dụng công nghệ và phát triển hạ tầng nhằm đáp ứng yêu cầu ngày càng cao của chuỗi cung ứng hiện đại, trở thành đối tác tin cậy của khách hàng trong và ngoài nước.",
       imageAlt: "Hàng hóa được quản lý trong trung tâm kho vận",
       items: [
         {
           title: "Vận tải đường biển",
           description:
-            "Giải pháp linh hoạt, an toàn và hiệu quả, đáp ứng nhu cầu vận chuyển hàng hóa trong nước và quốc tế.",
+            "VTA Global Port cung cấp dịch vụ vận tải đường biển với giải pháp linh hoạt, an toàn và hiệu quả, đáp ứng nhu cầu vận chuyển hàng hóa trong nước và quốc tế.",
         },
         {
           title: "Khai thác cảng",
           description:
-            "Quy trình chuyên nghiệp phục vụ tiếp nhận tàu, xếp dỡ hàng hóa và điều phối hoạt động cảng an toàn, hiệu quả.",
+            "VTA Global Port cung cấp dịch vụ khai thác cảng với quy trình vận hành chuyên nghiệp, đáp ứng nhu cầu tiếp nhận tàu, xếp dỡ hàng hóa và điều phối hoạt động cảng một cách an toàn, hiệu quả.",
         },
         {
           title: "Khai thác kho bãi",
           description:
-            "Hệ thống lưu trữ vận hành khoa học, quản lý hàng hóa xuyên suốt từ tiếp nhận, lưu kho đến phân phối.",
-        },
-        {
-          title: "Dịch vụ logistics",
-          description:
-            "Giải pháp đồng bộ từ cảng đến điểm giao nhận, kết nối khai thác cảng, vận tải đường thủy và quản lý kho bãi.",
+            "VTA Global Port cung cấp dịch vụ quản lý kho bãi với hệ thống lưu trữ được vận hành khoa học, an toàn và hiệu quả.",
         },
       ],
     },
     fleet: {
-      eyebrow: "Năng lực trên mọi thủy trình",
+      eyebrow: "Đội tàu",
       title: "Đội tàu của chúng tôi",
       description:
-        "Sở hữu đội tàu biển và tàu sông được đầu tư đồng bộ, VTA Global Port cung cấp năng lực vận tải linh hoạt. Hệ thống gồm 4 tàu biển trọng tải lớn cùng các phương tiện đường thủy nội địa, kết nối hiệu quả cảng biển, cảng sông và khu vực sản xuất để tối ưu chuỗi cung ứng.",
-      cta: "Trao đổi nhu cầu vận tải",
+        "Sở hữu đội tàu biển và tàu sông được đầu tư đồng bộ, VTA Global Port cung cấp năng lực vận tải linh hoạt, đáp ứng đa dạng nhu cầu vận chuyển hàng hóa. Hệ thống gồm 4 tàu biển trọng tải lớn cùng nhiều phương tiện vận tải đường thủy nội địa, giúp kết nối hiệu quả giữa cảng biển, cảng sông và các khu vực sản xuất, góp phần tối ưu chuỗi cung ứng và nâng cao hiệu quả logistics.",
+      cta: "Liên hệ",
       imageAlt: "Toàn cảnh cảng container nhìn từ trên cao",
       vesselCount: "04",
       vesselCountLabel: "tàu biển trọng tải lớn",
       watermark: "BIỂN / SÔNG",
       groups: [
-        {
-          title: "Tàu biển",
-          description:
-            "Năng lực vận chuyển tải trọng lớn, phục vụ luồng hàng trong nước và kết nối quốc tế.",
-        },
-        {
-          title: "Tàu sông",
-          description:
-            "Phương tiện đường thủy nội địa linh hoạt, kết nối cảng biển với cảng sông và khu sản xuất.",
-        },
+        { title: "Tàu biển" },
+        { title: "Tàu sông" },
       ],
     },
     news: {
-      eyebrow: "Góc nhìn VTA",
+      eyebrow: "Tin tức",
       title: "Tin tức về chúng tôi",
       description:
-        "Thông tin vận hành, hoạt động ngành và các cập nhật từ VTA Global Port sẽ được chia sẻ tại đây.",
+        "Thông tin về các hoạt động của doanh nghiệp; các bài viết về kỹ thuật, xu hướng trong ngành và nghiên cứu.",
       items: [
         {
-          category: "Hoạt động",
-          title: "Góc nhìn từ hoạt động khai thác cảng và logistics",
-          description:
-            "Nội dung về quy trình vận hành, an toàn và tối ưu luồng hàng đang được biên tập.",
-          status: "Nội dung sắp cập nhật",
+          title: "Hoạt động",
+          status: "Nội dung đang được cập nhật",
         },
         {
-          category: "Sự kiện",
-          title: "Kết nối chuyên môn trong chuỗi cung ứng",
-          description:
-            "Thông tin hội thảo và hoạt động kết nối ngành sẽ được công bố sau khi xác nhận.",
-          status: "Nội dung sắp cập nhật",
+          title: "Sự kiện",
+          status: "Nội dung đang được cập nhật",
         },
         {
-          category: "Truyền thông",
-          title: "Tài liệu và câu chuyện về vận tải hiện đại",
-          description:
-            "Các nội dung truyền thông chính thức của VTA Global Port sẽ xuất hiện tại chuyên mục này.",
-          status: "Nội dung sắp cập nhật",
+          title: "Truyền thông",
+          status: "Nội dung đang được cập nhật",
+        },
+        {
+          title: "Tuyển dụng",
+          status: "Nội dung đang được cập nhật",
         },
       ],
     },
     smart: {
-      eyebrow: "Vận hành dựa trên dữ liệu",
+      eyebrow: "Quản lý thông minh",
       title: "Hệ thống quản lý thông minh của chúng tôi",
       description:
         "Ứng dụng công nghệ và quy trình quản lý hiện đại để tối ưu hoạt động khai thác cảng, điều phối phương tiện và quản lý hàng hóa, giúp nâng cao hiệu quả vận hành và hỗ trợ khách hàng trong suốt quá trình logistics.",
       interfaceLabel: "Bảng điều phối VTA",
       systemOnline: "Hạ tầng dịch vụ đang kết nối",
       tools: [
-        {
-          title: "My VTA Port",
-          description: "Không gian quản lý tập trung cho khách hàng và đối tác.",
-        },
-        {
-          title: "Tra cứu lịch tàu",
-          description: "Tiếp cận lịch trình dự kiến trong một luồng tra cứu rõ ràng.",
-        },
-        {
-          title: "Theo dõi hàng hóa",
-          description: "Theo dõi tiến trình lô hàng khi hệ thống dữ liệu được kết nối.",
-        },
-        {
-          title: "Biểu cước vận tải",
-          description: "Tham khảo biểu cước theo nhu cầu và tuyến vận chuyển.",
-        },
+        { title: "My VTA Port" },
+        { title: "Tra cứu lịch tàu" },
+        { title: "Theo dõi hàng hóa" },
+        { title: "Biểu cước vận tải" },
       ],
     },
     contact: {
-      eyebrow: "Bắt đầu từ một cuộc trao đổi",
+      eyebrow: "Liên hệ",
       title: "Liên hệ với chúng tôi",
       description:
         "Đội ngũ chuyên gia của chúng tôi luôn sẵn sàng hỗ trợ mọi yêu cầu về dịch vụ cảng, vận tải và logistics. Gửi thông tin của Quý khách ngay hôm nay để nhận tư vấn, báo giá hoặc giải pháp phù hợp cho hoạt động kinh doanh.",
@@ -224,7 +189,6 @@ export const content: Record<Language, SiteContent> = {
       fax: "+84 123 456 780",
       emailLabel: "Email",
       email: "info@vtagroup.vn",
-      confirmationNote: "Thông tin đang được xác nhận",
       formTitle: "Gửi yêu cầu",
       fullName: "Họ và tên",
       companyName: "Tên doanh nghiệp",
@@ -249,7 +213,7 @@ export const content: Record<Language, SiteContent> = {
       ],
     },
     footer: {
-      tagline: "Kết nối năng lực cảng. Kiến tạo dòng chảy hàng hóa.",
+      tagline: "Vững bước thành công",
       navigationLabel: "Điều hướng chân trang",
       copyright: "© 2026 VTA Global Port. Bảo lưu mọi quyền.",
       top: "Về đầu trang",
@@ -298,16 +262,10 @@ export const content: Record<Language, SiteContent> = {
       { label: "Contact", href: "#contact", children: [] },
     ],
     hero: {
-      eyebrow: "Connecting ports · Optimising supply chains",
+      eyebrow: "VTA Global Port",
       headline: "Steady steps to success",
-      body:
-        "VTA Global Port delivers efficient transport and operations solutions that optimise cargo flows from port to destination. We strengthen operational capacity, apply technology, develop infrastructure and aim to be a trusted partner for customers in Vietnam and abroad.",
       cta: "Contact us",
       imageAlt: "Container vessels being handled at a seaport",
-      routeLabel: "Cargo flow",
-      routeValue: "Port → Destination",
-      operatingLabel: "Capability",
-      operatingValue: "Integrated operations",
     },
     tracking: {
       eyebrow: "VTA Control Desk",
@@ -340,122 +298,93 @@ export const content: Record<Language, SiteContent> = {
     },
     company: {
       eyebrow: "VTA Global Port",
-      title: "One partner. One continuous operating flow.",
+      title: "The foundation behind VTA Global Port",
+      subtitle: "Built on operational standards and an experienced team",
       body:
-        "Through integrated services and an experienced team, we connect transport, port operations and logistics so cargo can move safely, efficiently and on schedule.",
-      values: ["Safety", "Operational excellence", "Innovation", "Sustainability"],
+        "With an integrated service system and a professional team, VTA Global Port provides efficient transport and operations solutions, helping optimise cargo flows from ports to delivery points. We continuously enhance our operational capacity, apply technology and develop infrastructure to meet the increasing demands of modern supply chains, becoming a trusted partner to customers in Vietnam and abroad.",
+      values: ["Integrity", "Safety", "Operational excellence", "Innovation", "Sustainable development"],
       imageAlt: "Transport network viewed from above",
-      visualLabel: "VTA / Integrated Logistics",
+      visualLabel: "VTA Global Port",
     },
     services: {
-      eyebrow: "Integrated capability",
+      eyebrow: "Services",
       title: "Our services",
       description:
-        "With integrated services and a professional team, VTA Global Port delivers efficient transport and operations solutions that optimise cargo flows from port to destination. We continually strengthen our operations, apply technology and develop infrastructure for modern supply chains.",
+        "With an integrated service system and a professional team, VTA Global Port provides efficient transport and operations solutions, helping optimise cargo flows from ports to delivery points. We continuously enhance our operational capacity, apply technology and develop infrastructure to meet the increasing demands of modern supply chains, becoming a trusted partner to customers in Vietnam and abroad.",
       imageAlt: "Cargo managed inside a logistics warehouse",
       items: [
         {
           title: "Sea freight",
           description:
-            "Flexible, safe and efficient solutions for domestic and international cargo transport.",
+            "VTA Global Port provides sea freight services with flexible, safe and efficient solutions that meet domestic and international cargo transportation needs.",
         },
         {
           title: "Port operations",
           description:
-            "Professional processes for vessel reception, cargo handling and safe, efficient port coordination.",
+            "VTA Global Port provides port operations services with professional operating processes, meeting the needs of vessel reception, cargo handling and port activity coordination safely and efficiently.",
         },
         {
           title: "Warehousing",
           description:
-            "Scientifically operated storage and end-to-end cargo management from receipt to distribution.",
-        },
-        {
-          title: "Logistics services",
-          description:
-            "Integrated port-to-destination solutions connecting port operations, water transport and warehousing.",
+            "VTA Global Port provides warehouse management services with a storage system operated systematically, safely and efficiently.",
         },
       ],
     },
     fleet: {
-      eyebrow: "Capability across waterways",
+      eyebrow: "Fleet",
       title: "Our fleet",
       description:
-        "VTA Global Port operates a consistently invested fleet of sea-going and river vessels for flexible cargo transport. Four high-capacity sea-going vessels and inland waterway craft connect seaports, river ports and production areas to optimise supply chains.",
-      cta: "Discuss transport needs",
+        "With a consistently invested fleet of sea-going and river vessels, VTA Global Port provides flexible transport capacity to meet diverse cargo transportation needs. The system includes four high-capacity sea-going vessels and numerous inland waterway craft, effectively connecting seaports, river ports and production areas, helping optimise supply chains and improve logistics efficiency.",
+      cta: "Contact",
       imageAlt: "Aerial overview of a container terminal",
       vesselCount: "04",
       vesselCountLabel: "high-capacity sea-going vessels",
       watermark: "SEA / RIVER",
       groups: [
-        {
-          title: "Sea-going vessels",
-          description:
-            "High-capacity transport serving domestic cargo flows and international connections.",
-        },
-        {
-          title: "River vessels",
-          description:
-            "Flexible inland waterway craft connecting seaports, river ports and production areas.",
-        },
+        { title: "Sea-going vessels" },
+        { title: "River vessels" },
       ],
     },
     news: {
-      eyebrow: "VTA perspectives",
+      eyebrow: "News",
       title: "News about us",
       description:
-        "Operational insights, industry activity and updates from VTA Global Port will be shared here.",
+        "Information about company activities; technical articles, industry trends and research.",
       items: [
         {
-          category: "Operations",
-          title: "Perspectives from port and logistics operations",
-          description:
-            "Editorial content on operating processes, safety and cargo flow optimisation is in preparation.",
-          status: "Content coming soon",
+          title: "Operations",
+          status: "Content is being updated",
         },
         {
-          category: "Events",
-          title: "Building professional supply-chain connections",
-          description:
-            "Industry workshop and networking information will be published once confirmed.",
-          status: "Content coming soon",
+          title: "Events",
+          status: "Content is being updated",
         },
         {
-          category: "Media",
-          title: "Resources and stories about modern transport",
-          description:
-            "Official VTA Global Port media will be published in this section.",
-          status: "Content coming soon",
+          title: "Media",
+          status: "Content is being updated",
+        },
+        {
+          title: "Careers",
+          status: "Content is being updated",
         },
       ],
     },
     smart: {
-      eyebrow: "Data-led operations",
+      eyebrow: "Smart management",
       title: "Our smart management system",
       description:
         "We apply technology and modern management processes to optimise port operations, vehicle coordination and cargo management, improving operating efficiency and supporting customers throughout their logistics journey.",
       interfaceLabel: "VTA operations board",
       systemOnline: "Service infrastructure is connecting",
       tools: [
-        {
-          title: "My VTA Port",
-          description: "A central management space for customers and partners.",
-        },
-        {
-          title: "Vessel schedule",
-          description: "Access planned schedules through a clear lookup flow.",
-        },
-        {
-          title: "Cargo tracking",
-          description: "Follow shipment progress once the data service is connected.",
-        },
-        {
-          title: "Freight tariffs",
-          description: "Review tariffs based on transport needs and routes.",
-        },
+        { title: "My VTA Port" },
+        { title: "Vessel schedule" },
+        { title: "Cargo tracking" },
+        { title: "Freight tariffs" },
       ],
     },
     contact: {
-      eyebrow: "Start with a conversation",
+      eyebrow: "Contact",
       title: "Contact us",
       description:
         "Our specialists are ready to support port, transport and logistics requirements. Send us your information today to request advice, a quotation or a solution tailored to your business operations.",
@@ -468,12 +397,11 @@ export const content: Record<Language, SiteContent> = {
       fax: "+84 123 456 780",
       emailLabel: "Email",
       email: "info@vtagroup.vn",
-      confirmationNote: "Information pending confirmation",
       formTitle: "Send an enquiry",
       fullName: "Full name",
       companyName: "Company name",
       position: "Position",
-      emailField: "Email",
+      emailField: "Business email",
       phoneField: "Phone number",
       message: "Your enquiry",
       interest: "Area of interest",
@@ -493,7 +421,7 @@ export const content: Record<Language, SiteContent> = {
       ],
     },
     footer: {
-      tagline: "Connecting port capability. Creating seamless cargo flows.",
+      tagline: "Steady steps to success",
       navigationLabel: "Footer navigation",
       copyright: "© 2026 VTA Global Port. All rights reserved.",
       top: "Back to top",
