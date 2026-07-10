@@ -6,13 +6,13 @@ import {
   ArrowDown,
   ArrowUpRight,
   Boxes,
+  BriefcaseBusiness,
   CalendarDays,
   CheckCircle2,
   Container,
   Gauge,
   Mail,
   MapPin,
-  Network,
   PackageSearch,
   PanelsTopLeft,
   Phone,
@@ -28,7 +28,8 @@ import { TrackingHub } from "@/components/TrackingHub";
 import { content as siteContent } from "@/data/content";
 import type { Language } from "@/data/types";
 
-const serviceIcons = [Ship, Anchor, Warehouse, Network];
+const serviceIcons = [Ship, Anchor, Warehouse];
+const newsIcons = [Gauge, CalendarDays, Waves, BriefcaseBusiness];
 const smartIcons = [PanelsTopLeft, CalendarDays, PackageSearch, ReceiptText];
 
 export function HomePage() {
@@ -76,22 +77,10 @@ export function HomePage() {
           <div className="page-shell hero-content">
             <p className="hero-kicker">{content.hero.eyebrow}</p>
             <h1 id="hero-title">{content.hero.headline}</h1>
-            <p className="hero-copy">{content.hero.body}</p>
             <a className="button button-cyan" href="#contact">
               {content.hero.cta}
               <ArrowDown aria-hidden="true" />
             </a>
-
-            <div className="hero-facts" aria-label="VTA Global Port highlights">
-              <div>
-                <span>{content.hero.routeLabel}</span>
-                <strong>{content.hero.routeValue}</strong>
-              </div>
-              <div>
-                <span>{content.hero.operatingLabel}</span>
-                <strong>{content.hero.operatingValue}</strong>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -104,6 +93,7 @@ export function HomePage() {
             <div className="company-copy reveal-item">
               <p className="section-kicker">{content.company.eyebrow}</p>
               <h2>{content.company.title}</h2>
+              <p className="company-subtitle">{content.company.subtitle}</p>
               <p>{content.company.body}</p>
               <ul className="value-list">
                 {content.company.values.map((value) => (
@@ -149,12 +139,12 @@ export function HomePage() {
                 />
                 <div className="image-index" aria-hidden="true">
                   <span>VTA</span>
-                  <strong>01—04</strong>
+                  <strong>01—03</strong>
                 </div>
               </div>
               <ol className="service-list">
                 {content.services.items.map((service, index) => {
-                  const ServiceIcon = serviceIcons[index];
+                  const ServiceIcon = serviceIcons[index] ?? Ship;
                   return (
                     <li key={service.title}>
                       <span className="service-number">0{index + 1}</span>
@@ -213,7 +203,6 @@ export function HomePage() {
                   <span>0{index + 1}</span>
                   {index === 0 ? <Ship aria-hidden="true" /> : <Waves aria-hidden="true" />}
                   <h3>{group.title}</h3>
-                  <p>{group.description}</p>
                 </article>
               ))}
             </div>
@@ -231,22 +220,21 @@ export function HomePage() {
             </div>
 
             <div className="news-list">
-              {content.news.items.map((item, index) => (
-                <article className="news-item" key={item.category}>
-                  <div className={`news-art news-art-${index + 1}`} aria-hidden="true">
-                    {index === 0 && <Gauge />}
-                    {index === 1 && <CalendarDays />}
-                    {index === 2 && <Waves />}
-                    <span>0{index + 1}</span>
-                  </div>
-                  <div className="news-copy">
-                    <p>{item.category}</p>
-                    <h3>{item.title}</h3>
-                    <span>{item.description}</span>
-                    <small>{item.status}</small>
-                  </div>
-                </article>
-              ))}
+              {content.news.items.map((item, index) => {
+                const NewsIcon = newsIcons[index] ?? Gauge;
+                return (
+                  <article className="news-item" key={item.title}>
+                    <div className={`news-art news-art-${index + 1}`} aria-hidden="true">
+                      <NewsIcon />
+                      <span>0{index + 1}</span>
+                    </div>
+                    <div className="news-copy">
+                      <h3>{item.title}</h3>
+                      <small>{item.status}</small>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -259,7 +247,7 @@ export function HomePage() {
               <p>{content.smart.description}</p>
               <div className="smart-tool-list">
                 {content.smart.tools.map((tool, index) => {
-                  const SmartIcon = smartIcons[index];
+                  const SmartIcon = smartIcons[index] ?? PanelsTopLeft;
                   return (
                     <button type="button" key={tool.title} onClick={() => handleSmartTool(tool.title)}>
                       <span>
@@ -267,7 +255,6 @@ export function HomePage() {
                       </span>
                       <span>
                         <strong>{tool.title}</strong>
-                        <small>{tool.description}</small>
                       </span>
                       <ArrowUpRight aria-hidden="true" />
                     </button>
@@ -344,7 +331,6 @@ export function HomePage() {
                     <strong>{content.contact.email}</strong>
                   </span>
                 </div>
-                <p className="confirmation-note">{content.contact.confirmationNote}</p>
               </div>
             </div>
 
