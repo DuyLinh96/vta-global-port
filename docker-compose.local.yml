@@ -1,0 +1,7 @@
+services:
+  web:
+    image: vta-global-port:local
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: Dockerfile

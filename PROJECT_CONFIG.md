@@ -40,7 +40,11 @@ Tracking là công cụ nổi bật trên trang: cung cấp ô theo dõi lô hà
 ## Docker Services
 | Service | Image | Port |
 |---------|-------|------|
-| web | Node.js/Next.js, build từ Dockerfile của dự án | 3000 |
+| web | `docker.io/linhnguyen96/vta-global-port:${IMAGE_TAG:-latest}`, pull từ Docker Hub | `127.0.0.1:${WEB_PORT:-3000}` → 3000 |
+
+- Production dùng `docker-compose.yml` image-only; maintainer dùng `scripts/publish.sh` để build/push thủ công image `linux/amd64` lên Docker Hub, không dùng CI publish image; server chỉ pull và chạy image.
+- Developer/QA dùng thêm `docker-compose.local.yml` để build `Dockerfile` tại local.
+- Hướng dẫn publish, deploy, rollback, Nginx và HTTPS nằm trong `DEPLOYMENT.md`.
 
 ## Modules / Features chính
 | Module | Mô tả | Backend | Frontend Web |
