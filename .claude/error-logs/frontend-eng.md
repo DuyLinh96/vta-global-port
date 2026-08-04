@@ -29,3 +29,9 @@ Ghi lại các lỗi đã gặp và cách fix. Đọc file này TRƯỚC KHI cod
 - **Nguyên nhân**: Bản triển khai trước biên tập lại copy thay vì coi nội dung PDF theo từng trang là nguồn chuẩn bắt buộc.
 - **Fix**: Đồng bộ nguyên văn nội dung tiếng Việt từ PDF, dịch trung thành sang tiếng Anh và thu hẹp data shape/UI theo đúng số lượng mục được tài liệu quy định.
 - **Bài học**: Với nội dung doanh nghiệp có nguồn duyệt, chỉ thêm nhãn chức năng hoặc trạng thái demo cần thiết; không paraphrase, rút gọn hay sáng tác claims ngoài tài liệu.
+
+## [2026-08-04] Paragraph bị rơi về font serif mặc định
+- **Lỗi**: Một số đoạn nội dung render bằng `Times New Roman` trong khi heading/subtitle dùng font sans-serif.
+- **Nguyên nhân**: Reset CSS dùng `body, button, input, select, textarea { font: inherit; }`, khiến `body` kế thừa font mặc định từ `html` và ghi đè `font-family: var(--font-body)` đã khai báo trước đó.
+- **Fix**: Bỏ `body` khỏi selector reset, chỉ để form controls kế thừa font từ ngữ cảnh hiện tại.
+- **Bài học**: Không dùng shorthand `font: inherit` trên `body` sau khi đã set font-family cho body; nếu reset form controls thì target trực tiếp controls.
