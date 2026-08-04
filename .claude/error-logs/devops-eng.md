@@ -11,3 +11,9 @@
 - **Nguyên nhân**: Gia tri environment bi cat con 7 ky tu truoc khi kiem tra dinh dang.
 - **Fix**: Validate toan bo `GIT_SHA` truoc, sau do moi rut gon toi da 12 ky tu de tao Docker tag.
 - **Bài học**: Luon validate input goc truoc moi phep normalize hoac truncate de khong che mat du lieu khong hop le.
+
+## [2026-08-04] ESLint quet Playwright report da ignore trong Git
+- **Lỗi**: `npm run lint` bao hang tram loi trong JavaScript bundle do Playwright tao tai `playwright-report/`.
+- **Nguyên nhân**: `.gitignore` da loai cac thu muc report/test artifact, nhung flat ESLint config chua ignore cac duong dan tuong ung.
+- **Fix**: Them `playwright-report/**`, `test-results/**`, `blob-report/**` va `coverage/**` vao danh sach ESLint ignores.
+- **Bài học**: Dong bo danh sach generated test outputs giua `.gitignore` va ESLint flat config de lint chi kiem tra source du an.
