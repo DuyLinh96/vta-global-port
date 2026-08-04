@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ContactForm } from "@/components/ContactForm";
+import { FleetCards } from "@/components/FleetCards";
 import { Header } from "@/components/Header";
 import { TrackingHub } from "@/components/TrackingHub";
 import { content as siteContent } from "@/data/content";
@@ -179,33 +180,7 @@ export function HomePage() {
                 </a>
               </div>
             </div>
-
-            <div className="fleet-stage">
-              <Image
-                src="/images/fleet-ship.webp"
-                alt={content.fleet.imageAlt}
-                fill
-                sizes="(max-width: 900px) 100vw, 72vw"
-              />
-              <div className="fleet-count">
-                <strong>{content.fleet.vesselCount}</strong>
-                <span>{content.fleet.vesselCountLabel}</span>
-              </div>
-              <div className="fleet-watermark" aria-hidden="true">
-                <Waves />
-                <span>{content.fleet.watermark}</span>
-              </div>
-            </div>
-
-            <div className="fleet-groups">
-              {content.fleet.groups.map((group, index) => (
-                <article key={group.title}>
-                  <span>0{index + 1}</span>
-                  {index === 0 ? <Ship aria-hidden="true" /> : <Waves aria-hidden="true" />}
-                  <h3>{group.title}</h3>
-                </article>
-              ))}
-            </div>
+            <FleetCards compact />
           </div>
         </section>
 
@@ -343,7 +318,7 @@ export function HomePage() {
         <div className="page-shell footer-main">
           <div className="footer-brand">
             <Image
-              src="/images/vta-logo-light.png"
+              src="/images/vta-logo-dark.png"
               alt="VTA Global Port"
               width={1097}
               height={1196}

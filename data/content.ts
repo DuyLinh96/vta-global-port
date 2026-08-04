@@ -17,41 +17,53 @@ export const content: Record<Language, SiteContent> = {
     },
     nav: [
       {
-        label: "Về công ty",
-        href: "#company",
-        children: ["Sứ mệnh và tầm nhìn", "Giá trị cốt lõi", "Lãnh đạo"],
+        label: "Về chúng tôi",
+        href: "/about",
+        children: [
+          { label: "Sứ mệnh và tầm nhìn", href: "/about#mission-vision" },
+          { label: "Giá trị cốt lõi", href: "/about#core-values" },
+          { label: "Lãnh đạo", href: "/about#leadership" },
+        ],
       },
       {
         label: "Dịch vụ",
-        href: "#services",
+        href: "/services",
         children: [
-          "Vận tải đường biển",
-          "Khai thác cảng",
-          "Khai thác kho bãi",
-          "Dịch vụ logistics",
+          { label: "Vận tải đường biển", href: "/services#sea-freight" },
+          { label: "Khai thác cảng", href: "/services#port-operations" },
+          { label: "Khai thác kho bãi", href: "/services#warehousing" },
+          { label: "Dịch vụ logistics", href: "/services#logistics" },
         ],
       },
       {
         label: "Đội tàu",
-        href: "#fleet",
-        children: ["Tàu biển", "Tàu sông"],
+        href: "/fleet",
+        children: [
+          { label: "Tàu biển", href: "/fleet#sea-vessels" },
+          { label: "Tàu sông", href: "/fleet#river-vessels" },
+        ],
       },
       {
         label: "Tin tức",
-        href: "#news",
-        children: ["Hoạt động", "Sự kiện", "Truyền thông", "Tuyển dụng"],
+        href: "/news",
+        children: [
+          { label: "Hoạt động", href: "/news#operations" },
+          { label: "Sự kiện", href: "/news#events" },
+          { label: "Truyền thông", href: "/news#media" },
+          { label: "Tuyển dụng", href: "/news#careers" },
+        ],
       },
       {
         label: "Quản lý thông minh",
-        href: "#smart",
+        href: "/smart-management",
         children: [
-          "My VTA Port",
-          "Tra cứu lịch tàu",
-          "Theo dõi hàng hóa",
-          "Biểu cước vận tải",
+          { label: "My VTA Port", href: "/smart-management#my-vta-port" },
+          { label: "Tra cứu lịch tàu", href: "/smart-management#schedule" },
+          { label: "Theo dõi hàng hóa", href: "/smart-management#tracking" },
+          { label: "Biểu cước vận tải", href: "/smart-management#tariffs" },
         ],
       },
-      { label: "Liên hệ", href: "#contact", children: [] },
+      { label: "Liên hệ", href: "/contact", children: [] },
     ],
     hero: {
       eyebrow: "VTA Global Port",
@@ -100,7 +112,7 @@ export const content: Record<Language, SiteContent> = {
     },
     services: {
       eyebrow: "Dịch vụ",
-      title: "Dịch vụ của chúng tôi",
+      title: "Dịch vụ",
       description:
         "Với hệ thống dịch vụ đồng bộ cùng đội ngũ chuyên nghiệp, VTA Global Port mang đến các giải pháp vận chuyển và khai thác hiệu quả, giúp tối ưu dòng chảy hàng hóa từ cảng đến điểm giao nhận. Chúng tôi không ngừng nâng cao năng lực vận hành, ứng dụng công nghệ và phát triển hạ tầng nhằm đáp ứng yêu cầu ngày càng cao của chuỗi cung ứng hiện đại, trở thành đối tác tin cậy của khách hàng trong và ngoài nước.",
       imageAlt: "Hàng hóa được quản lý trong trung tâm kho vận",
@@ -124,7 +136,7 @@ export const content: Record<Language, SiteContent> = {
     },
     fleet: {
       eyebrow: "Đội tàu",
-      title: "Đội tàu của chúng tôi",
+      title: "Đội tàu",
       description:
         "Sở hữu đội tàu biển và tàu sông được đầu tư đồng bộ, VTA Global Port cung cấp năng lực vận tải linh hoạt, đáp ứng đa dạng nhu cầu vận chuyển hàng hóa. Hệ thống gồm 4 tàu biển trọng tải lớn cùng nhiều phương tiện vận tải đường thủy nội địa, giúp kết nối hiệu quả giữa cảng biển, cảng sông và các khu vực sản xuất, góp phần tối ưu chuỗi cung ứng và nâng cao hiệu quả logistics.",
       cta: "Liên hệ",
@@ -139,7 +151,7 @@ export const content: Record<Language, SiteContent> = {
     },
     news: {
       eyebrow: "Tin tức",
-      title: "Tin tức về chúng tôi",
+      title: "Tin Tức",
       description:
         "Thông tin về các hoạt động của doanh nghiệp; các bài viết về kỹ thuật, xu hướng trong ngành và nghiên cứu.",
       items: [
@@ -163,7 +175,7 @@ export const content: Record<Language, SiteContent> = {
     },
     smart: {
       eyebrow: "Quản lý thông minh",
-      title: "Hệ thống quản lý thông minh của chúng tôi",
+      title: "Hệ thống quản lý thông minh",
       description:
         "Ứng dụng công nghệ và quy trình quản lý hiện đại để tối ưu hoạt động khai thác cảng, điều phối phương tiện và quản lý hàng hóa, giúp nâng cao hiệu quả vận hành và hỗ trợ khách hàng trong suốt quá trình logistics.",
       interfaceLabel: "Bảng điều phối VTA",
@@ -235,31 +247,53 @@ export const content: Record<Language, SiteContent> = {
     },
     nav: [
       {
-        label: "Company",
-        href: "#company",
-        children: ["Mission & vision", "Core values", "Leadership"],
+        label: "About us",
+        href: "/about",
+        children: [
+          { label: "Mission & vision", href: "/about#mission-vision" },
+          { label: "Core values", href: "/about#core-values" },
+          { label: "Leadership", href: "/about#leadership" },
+        ],
       },
       {
         label: "Services",
-        href: "#services",
-        children: ["Sea freight", "Port operations", "Warehousing", "Logistics"],
+        href: "/services",
+        children: [
+          { label: "Sea freight", href: "/services#sea-freight" },
+          { label: "Port operations", href: "/services#port-operations" },
+          { label: "Warehousing", href: "/services#warehousing" },
+          { label: "Logistics", href: "/services#logistics" },
+        ],
       },
       {
         label: "Fleet",
-        href: "#fleet",
-        children: ["Sea-going vessels", "River vessels"],
+        href: "/fleet",
+        children: [
+          { label: "Sea-going vessels", href: "/fleet#sea-vessels" },
+          { label: "River vessels", href: "/fleet#river-vessels" },
+        ],
       },
       {
         label: "News",
-        href: "#news",
-        children: ["Operations", "Events", "Media", "Careers"],
+        href: "/news",
+        children: [
+          { label: "Operations", href: "/news#operations" },
+          { label: "Events", href: "/news#events" },
+          { label: "Media", href: "/news#media" },
+          { label: "Careers", href: "/news#careers" },
+        ],
       },
       {
         label: "Smart management",
-        href: "#smart",
-        children: ["My VTA Port", "Vessel schedule", "Cargo tracking", "Freight tariffs"],
+        href: "/smart-management",
+        children: [
+          { label: "My VTA Port", href: "/smart-management#my-vta-port" },
+          { label: "Vessel schedule", href: "/smart-management#schedule" },
+          { label: "Cargo tracking", href: "/smart-management#tracking" },
+          { label: "Freight tariffs", href: "/smart-management#tariffs" },
+        ],
       },
-      { label: "Contact", href: "#contact", children: [] },
+      { label: "Contact", href: "/contact", children: [] },
     ],
     hero: {
       eyebrow: "VTA Global Port",

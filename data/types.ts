@@ -5,7 +5,10 @@ export type ShortcutId = "quote" | "schedule" | "port";
 export interface NavItem {
   label: string;
   href: string;
-  children: string[];
+  children: {
+    label: string;
+    href: string;
+  }[];
 }
 
 export interface ShortcutItem {

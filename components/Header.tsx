@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import type { Language, SiteContent } from "@/data/types";
@@ -19,9 +20,9 @@ export function Header({ content, language, onLanguageChange }: HeaderProps) {
   return (
     <header className="site-header">
       <div className="header-inner">
-        <a
+        <Link
           className="brand-link"
-          href="#top"
+          href="/"
           aria-label={content.common.brandHome}
           onClick={closeMenu}
         >
@@ -39,7 +40,7 @@ export function Header({ content, language, onLanguageChange }: HeaderProps) {
             <strong>VTA</strong>
             <span>Global Port</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="desktop-nav" aria-label={content.common.primaryNavigation}>
           <ul>
@@ -52,8 +53,8 @@ export function Header({ content, language, onLanguageChange }: HeaderProps) {
                 {item.children.length > 0 && (
                   <ul className="nav-submenu">
                     {item.children.map((child) => (
-                      <li key={child}>
-                        <a href={item.href}>{child}</a>
+                      <li key={child.href}>
+                        <a href={child.href}>{child.label}</a>
                       </li>
                     ))}
                   </ul>
@@ -106,7 +107,7 @@ export function Header({ content, language, onLanguageChange }: HeaderProps) {
             <li key={item.label}>
               <a href={item.href} onClick={closeMenu}>
                 <strong>{item.label}</strong>
-                <span>{item.children.join(" · ")}</span>
+                <span>{item.children.map((child) => child.label).join(" · ")}</span>
               </a>
             </li>
           ))}
