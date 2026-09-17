@@ -102,13 +102,23 @@ export function Header({ content, language, onLanguageChange }: HeaderProps) {
         className={`mobile-nav${menuOpen ? " is-open" : ""}`}
         aria-label={content.common.mobileNavigation}
       >
-        <ul>
+        <ul className="mobile-nav-list">
           {content.nav.map((item) => (
-            <li key={item.label}>
-              <a href={item.href} onClick={closeMenu}>
+            <li className="mobile-nav-item" key={item.label}>
+              <a className="mobile-nav-parent" href={item.href} onClick={closeMenu}>
                 <strong>{item.label}</strong>
-                <span>{item.children.map((child) => child.label).join(" · ")}</span>
               </a>
+              {item.children.length > 0 && (
+                <ul className="mobile-nav-children" aria-label={item.label}>
+                  {item.children.map((child) => (
+                    <li key={child.href}>
+                      <a href={child.href} onClick={closeMenu}>
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ul>

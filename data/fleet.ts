@@ -34,7 +34,7 @@ export const fleetGroups: FleetGroupData[] = [
     summary: "04 tàu chở hàng rời khai thác tuyến nội địa và quốc tế.",
     vessels: [
       {
-        name: "VTA Neptune",
+        name: "VTA NEPTUNE",
         type: "Tàu chở hàng rời",
         capacity: "23620 DWT",
         route: "Nội địa và Quốc tế",
@@ -42,7 +42,7 @@ export const fleetGroups: FleetGroupData[] = [
         icon: Ship,
       },
       {
-        name: "VTA Oceanus",
+        name: "VTA OCEANUS",
         type: "Tàu chở hàng rời",
         capacity: "24034 DWT",
         route: "Nội địa và Quốc tế",
@@ -50,7 +50,7 @@ export const fleetGroups: FleetGroupData[] = [
         icon: Ship,
       },
       {
-        name: "VTA Star city",
+        name: "VTA STAR CITY",
         type: "Tàu chở hàng rời",
         capacity: "24157 DWT",
         route: "Nội địa và Quốc tế",
@@ -58,7 +58,7 @@ export const fleetGroups: FleetGroupData[] = [
         icon: Ship,
       },
       {
-        name: "VTA poseidon",
+        name: "VTA POSEIDON",
         type: "Tàu chở hàng rời",
         capacity: "24241 DWT",
         route: "Nội địa và Quốc tế",

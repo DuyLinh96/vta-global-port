@@ -29,10 +29,11 @@ export const content: Record<Language, SiteContent> = {
         label: "Dịch vụ",
         href: "/services",
         children: [
-          { label: "Vận tải đường biển", href: "/services#sea-freight" },
-          { label: "Khai thác cảng", href: "/services#port-operations" },
-          { label: "Khai thác kho bãi", href: "/services#warehousing" },
-          { label: "Dịch vụ logistics", href: "/services#logistics" },
+          { label: "VẬN TẢI ĐƯỜNG BIỂN", href: "/services#sea-freight" },
+          { label: "KHAI THÁC CẢNG", href: "/services#port-operations" },
+          { label: "KHAI THÁC KHO BÃI", href: "/services#warehousing" },
+          { label: "DỊCH VỤ LOGISTICS", href: "/services#logistics" },
+          { label: "Giá Dịch Vụ", href: "/services/gia-dich-vu" },
         ],
       },
       {
@@ -259,10 +260,11 @@ export const content: Record<Language, SiteContent> = {
         label: "Services",
         href: "/services",
         children: [
-          { label: "Sea freight", href: "/services#sea-freight" },
-          { label: "Port operations", href: "/services#port-operations" },
-          { label: "Warehousing", href: "/services#warehousing" },
-          { label: "Logistics", href: "/services#logistics" },
+          { label: "SEA FREIGHT", href: "/services#sea-freight" },
+          { label: "PORT OPERATIONS", href: "/services#port-operations" },
+          { label: "WAREHOUSING", href: "/services#warehousing" },
+          { label: "LOGISTICS", href: "/services#logistics" },
+          { label: "Service Prices", href: "/services/gia-dich-vu" },
         ],
       },
       {
