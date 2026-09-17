@@ -132,7 +132,7 @@ h2 {
 }
 
 .page-shell {
-  width: min(100% - 32px, 1520px);
+  width: min(100% - 70px, 1040px);
   margin-inline: auto;
 }
 
@@ -221,7 +221,7 @@ h2 {
 
 .header-inner {
   display: flex;
-  width: min(100% - 32px, 1600px);
+  width: min(100% - 48px, 1088px);
   height: 100%;
   align-items: center;
   justify-content: space-between;
@@ -2648,6 +2648,93 @@ h2 {
   to { transform: scale(1); }
 }
 
+@media (min-width: 1181px) {
+  :root {
+    --header-height: 58px;
+  }
+
+  .site-header,
+  .hero {
+    width: min(100% - 70px, 1404px);
+    margin-inline: auto;
+  }
+
+  .site-header {
+    margin-top: 22px;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 48px;
+  }
+
+  .brand-mark img {
+    width: 40px;
+  }
+
+  .brand-name strong {
+    font-size: 0.94rem;
+  }
+
+  .brand-name span {
+    font-size: 0.52rem;
+  }
+
+  .nav-group > a {
+    min-width: 62px;
+    padding: 0 9px;
+    gap: 5px;
+    font-size: 0.72rem;
+  }
+
+  .language-switch button {
+    min-height: 38px;
+  }
+
+  .hero {
+    min-height: 508px;
+  }
+
+  .hero-content {
+    padding-top: clamp(78px, 8vw, 98px);
+    padding-bottom: 112px;
+  }
+
+  .hero h1 {
+    max-width: 720px;
+    margin-bottom: 34px;
+    font-size: clamp(4rem, 5.8vw, 5.35rem);
+    line-height: 1.12;
+  }
+
+  .tracking-wrap {
+    margin-top: -52px;
+  }
+
+  .tracking-main {
+    min-height: 204px;
+    padding: 28px 36px 18px;
+  }
+
+  .tracking-main h2 {
+    margin-bottom: 16px;
+    font-size: clamp(2rem, 2.8vw, 2.85rem);
+  }
+
+  .tracking-input-row {
+    min-height: 48px;
+  }
+
+  .shortcut-panel {
+    padding: 24px 26px 16px;
+  }
+
+  .shortcut-list button {
+    min-height: 48px;
+    padding-block: 8px;
+  }
+}
+
 @media (max-width: 1180px) {
   .desktop-nav {
     display: none;
@@ -2953,7 +3040,7 @@ h2 {
   }
 
   .page-shell {
-    width: min(100% - 24px, 560px);
+    width: min(100% - 32px, 560px);
   }
 
   h2 {
@@ -2996,7 +3083,7 @@ h2 {
   }
 
   .mobile-nav-list {
-    width: calc(100% - 24px);
+    width: calc(100% - 32px);
   }
 
   .service-prices-section {

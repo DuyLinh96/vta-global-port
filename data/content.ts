@@ -33,7 +33,7 @@ export const content: Record<Language, SiteContent> = {
           { label: "KHAI THÁC CẢNG", href: "/services#port-operations" },
           { label: "KHAI THÁC KHO BÃI", href: "/services#warehousing" },
           { label: "DỊCH VỤ LOGISTICS", href: "/services#logistics" },
-          { label: "Giá Dịch Vụ", href: "/services/gia-dich-vu" },
+          { label: "GIÁ DỊCH VỤ", href: "/services/gia-dich-vu" },
         ],
       },
       {
@@ -264,7 +264,7 @@ export const content: Record<Language, SiteContent> = {
           { label: "PORT OPERATIONS", href: "/services#port-operations" },
           { label: "WAREHOUSING", href: "/services#warehousing" },
           { label: "LOGISTICS", href: "/services#logistics" },
-          { label: "Service Prices", href: "/services/gia-dich-vu" },
+          { label: "SERVICE PRICES", href: "/services/gia-dich-vu" },
         ],
       },
       {
