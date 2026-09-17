@@ -19,15 +19,6 @@ export default function ServicePricesPage() {
       <section className="service-prices-section">
         <div className="page-shell">
           <div className="pdf-document-panel">
-            <div className="pdf-document-header">
-              <div>
-                <p className="section-kicker">Tài liệu</p>
-                <h2>Kê khai giá dịch vụ</h2>
-              </div>
-              <a className="button button-dark" href={pdfHref} target="_blank" rel="noreferrer">
-                Mở PDF
-              </a>
-            </div>
             <object
               className="pdf-document-viewer"
               data={pdfHref}
