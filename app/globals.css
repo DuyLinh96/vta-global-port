@@ -2653,8 +2653,7 @@ h2 {
     --header-height: 58px;
   }
 
-  .site-header,
-  .hero {
+  .site-header {
     width: min(100% - 70px, 1404px);
     margin-inline: auto;
   }
