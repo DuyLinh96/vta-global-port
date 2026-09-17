@@ -2650,44 +2650,37 @@ h2 {
 
 @media (min-width: 1181px) {
   :root {
-    --header-height: 58px;
+    --header-height: 72px;
   }
 
   .site-header {
-    width: min(100% - 70px, 1404px);
-    margin-inline: auto;
+    width: 100%;
+    margin: 0;
   }
 
-  .site-header {
-    margin-top: 22px;
+  .header-inner {
+    width: min(100% - 96px, 1404px);
   }
 
   .brand-mark {
-    width: 40px;
-    height: 48px;
+    width: 48px;
+    height: 58px;
   }
 
   .brand-mark img {
-    width: 40px;
+    width: 48px;
   }
 
   .brand-name strong {
-    font-size: 0.94rem;
+    font-size: 1.16rem;
   }
 
   .brand-name span {
-    font-size: 0.52rem;
-  }
-
-  .nav-group > a {
-    min-width: 62px;
-    padding: 0 9px;
-    gap: 5px;
-    font-size: 0.72rem;
+    font-size: 0.64rem;
   }
 
   .language-switch button {
-    min-height: 38px;
+    min-height: 44px;
   }
 
   .hero {
