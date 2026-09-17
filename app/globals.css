@@ -2591,41 +2591,16 @@ h2 {
 }
 
 .service-prices-section {
-  padding: 90px 0 120px;
-  background: var(--ice-50);
-}
-
-.pdf-document-panel {
-  border: 1px solid var(--line);
-  background: var(--white);
-  box-shadow: var(--shadow-heavy);
-}
-
-.pdf-document-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 32px;
-  padding: 34px;
-  border-bottom: 1px solid var(--line);
-}
-
-.pdf-document-header .section-kicker {
-  display: block;
-  margin-bottom: 12px;
-}
-
-.pdf-document-header h2 {
-  font-size: clamp(2.4rem, 4.8vw, 5.2rem);
+  background: #3f3f3f;
 }
 
 .pdf-document-viewer {
   display: block;
   width: 100%;
-  height: min(82vh, 920px);
-  min-height: 620px;
+  height: calc(100vh - var(--header-height));
+  min-height: 900px;
   border: 0;
-  background: var(--ice-100);
+  background: #3f3f3f;
 }
 
 .pdf-document-viewer p {
@@ -3078,23 +3053,8 @@ h2 {
     width: calc(100% - 32px);
   }
 
-  .service-prices-section {
-    padding: 60px 0 80px;
-  }
-
-  .pdf-document-header {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 24px;
-  }
-
-  .pdf-document-header .button {
-    width: 100%;
-  }
-
   .pdf-document-viewer {
-    height: 72vh;
-    min-height: 520px;
+    min-height: 720px;
   }
 
   .hero {

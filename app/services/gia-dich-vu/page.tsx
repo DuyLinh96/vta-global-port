@@ -17,20 +17,16 @@ export default function ServicePricesPage() {
       image={{ src: "/images/cai-mep-ship-cranes.jpg", alt: "Cảng container và cần cẩu khai thác hàng hóa" }}
     >
       <section className="service-prices-section">
-        <div className="page-shell">
-          <div className="pdf-document-panel">
-            <object
-              className="pdf-document-viewer"
-              data={pdfHref}
-              type="application/pdf"
-              aria-label="PDF Kê khai giá dịch vụ"
-            >
-              <p>
-                Trình duyệt không hỗ trợ xem PDF trực tiếp. <a href={pdfHref}>Mở file PDF</a>.
-              </p>
-            </object>
-          </div>
-        </div>
+        <object
+          className="pdf-document-viewer"
+          data={pdfHref}
+          type="application/pdf"
+          aria-label="PDF Kê khai giá dịch vụ"
+        >
+          <p>
+            Trình duyệt không hỗ trợ xem PDF trực tiếp. <a href={pdfHref}>Mở file PDF</a>.
+          </p>
+        </object>
       </section>
     </ContentPage>
   );
